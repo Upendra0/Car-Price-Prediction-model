@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predict Car Price</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Car Price Prediction</h1>
+        <p>This app predict your a car price based on it's feature</p>
+      </div>
+    </div>
+
+    <form class="container" method="POST">
+      <div>
+        <label for="year" class="form-label"> How old car is?</label>
+        <input type="number" class="form-control" id="year" />
+      </div>
+
+      <div>
+        <label for="present_price" class="form-label">
+          Present Price(In lakh)</label
+        >
+        <input type="number" class="form-control" id="present_price" />
+      </div>
+
+      <div>
+        <label for="km_driven" class="form-label"> Km Driven </label>
+        <input type="number" class="form-control" id="km_driven" />
+      </div>
+      <div>
+        <label for="no_of_owners" class="form-label"> No. of owners </label>
+        <input
+          type="number"
+          class="form-control"
+          id="no_of_owners"
+          name="owners"
+        />
+      </div>
+
+      <div style="padding-top: 20px">
+        <label for="fuel type"> Fuel Type of car </label>
+        <select class="form-select" id="fuel type" name="fuel_type">
+          <option selected>Diesel</option>
+          <option value="1">Petrol</option>
+          <option value="2">CNG</option>
+        </select>
+      </div>
+      <div style="padding-top: 20px">
+        <label for="fuel type"> Seller is(Dieler or Individual) </label>
+        <select class="form-select" id="seller type " name="seller_type">
+          <option selected>Dieler</option>
+          <option value="1">Individual</option>
+        </select>
+      </div>
+      <div style="padding-top: 20px">
+        <label for="fuel type"> Gear type(auto or mannual) </label>
+        <select class="form-select" id="seller type " name="seller_type">
+          <option selected> Auto</option>
+          <option value="1"> Mannual </option>
+        </select>
+      </div>
+
+      <div style="padding-top: 20px">
+        <button type="submit" class="btn btn-primary">Predict Price</button>
+      </div>
+    </form>
+  </body>
+</html>
