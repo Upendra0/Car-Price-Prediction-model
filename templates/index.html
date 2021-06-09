@@ -11,8 +11,14 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <style>
+      div {
+        padding-top: 20px;
+      }
+    </style>
   </head>
   <body>
+    <!-- This is heading of page-->
     <div class="container">
       <div class="jumbotron">
         <h1>Car Price Prediction</h1>
@@ -20,59 +26,57 @@
       </div>
     </div>
 
-    <form class="container" method="POST">
+    <!-- Form to recieve user input -->
+    <form class="container" method="POST" action="{{ url_for("predict")}}">
       <div>
         <label for="year" class="form-label"> How old car is?</label>
-        <input type="number" class="form-control" id="year" />
+        <input type="number" class="form-control" id="year" name="year" required/>
       </div>
 
       <div>
         <label for="present_price" class="form-label">
           Present Price(In lakh)</label
         >
-        <input type="number" class="form-control" id="present_price" />
+        <input type="number" class="form-control" id="present_price" name="present_price" required/>
       </div>
 
       <div>
         <label for="km_driven" class="form-label"> Km Driven </label>
-        <input type="number" class="form-control" id="km_driven" />
+        <input type="number" class="form-control" id="km_driven" name="km_driven" required/>
       </div>
       <div>
         <label for="no_of_owners" class="form-label"> No. of owners </label>
-        <input
-          type="number"
-          class="form-control"
-          id="no_of_owners"
-          name="owners"
-        />
+        <input type="number" class="form-control" id="no_of_owners" name="owner"/>
       </div>
 
-      <div style="padding-top: 20px">
+      <div>
         <label for="fuel type"> Fuel Type of car </label>
-        <select class="form-select" id="fuel type" name="fuel_type">
-          <option selected>Diesel</option>
-          <option value="1">Petrol</option>
-          <option value="2">CNG</option>
+        <select class="form-select" id="fuel type" name="fuel_type" required>
+          <option value="Diesel" selected>Diesel</option>
+          <option value="Petrol">Petrol</option>
+          <option value="CNG">CNG</option>
         </select>
       </div>
-      <div style="padding-top: 20px">
-        <label for="fuel type"> Seller is(Dieler or Individual) </label>
-        <select class="form-select" id="seller type " name="seller_type">
-          <option selected>Dieler</option>
-          <option value="1">Individual</option>
+      <div>
+        <label for="seller type"> Seller is(Dieler or Individual) </label>
+        <select class="form-select" id="seller type " name="seller_type" required>
+          <option value="Dieler" selected>Dieler</option>
+          <option value="Individual">Individual</option>
         </select>
       </div>
-      <div style="padding-top: 20px">
-        <label for="fuel type"> Gear type(auto or mannual) </label>
-        <select class="form-select" id="seller type " name="seller_type">
-          <option selected> Auto</option>
-          <option value="1"> Mannual </option>
+      <div>
+        <label for="Gear type"> Gear type(auto or mannual) </label>
+        <select class="form-select" id="Gear type " name="gear_type">
+          <option value="auto" selected> Auto</option>
+          <option value="mannual"> Mannual </option>
         </select>
       </div>
 
-      <div style="padding-top: 20px">
+      <div>
         <button type="submit" class="btn btn-primary">Predict Price</button>
+        <p>{{price}}</p>
       </div>
     </form>
+    
   </body>
 </html>
