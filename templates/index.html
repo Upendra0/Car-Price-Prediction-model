@@ -17,12 +17,12 @@
       }
     </style>
   </head>
-  <body>
+  <body style="background-color: aliceblue;">
     <!-- This is heading of page-->
     <div class="container">
       <div class="jumbotron">
         <h1>Car Price Prediction</h1>
-        <p>This app predict your a car price based on it's feature</p>
+        <p>Predict a car price before buying or selling it.</p>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
 
       <div>
         <label for="present_price" class="form-label">
-          Present Price(In lakh)</label
+          Present show room  Price(In lakh)</label
         >
         <input type="number" class="form-control" id="present_price" name="present_price" required/>
       </div>
@@ -45,7 +45,7 @@
         <input type="number" class="form-control" id="km_driven" name="km_driven" required/>
       </div>
       <div>
-        <label for="no_of_owners" class="form-label"> No. of owners </label>
+        <label for="no_of_owners" class="form-label"> No. of previous owners </label>
         <input type="number" class="form-control" id="no_of_owners" name="owner"/>
       </div>
 
@@ -67,14 +67,13 @@
       <div>
         <label for="Gear type"> Gear type(auto or mannual) </label>
         <select class="form-select" id="Gear type " name="gear_type">
-          <option value="auto" selected> Auto</option>
-          <option value="mannual"> Mannual </option>
+          <option value="auto"> Auto</option>
+          <option value="mannual" selected> Mannual </option>
         </select>
       </div>
 
       <div>
         <button type="submit" class="btn btn-primary">Predict Price</button>
-        <p>{{price}}</p>
       </div>
     </form>
     

@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-import numpy as np
-import pandas as pd
 import sklearn
 from joblib import load
 
@@ -35,8 +33,9 @@ def predict():
         x = [[year, present_price, km_driven, n_owner, fuel_type_diesel,
              fuel_type_petrol, seller_type_indvidual, transmission_mannual]]
         y = model.predict(x)[0]
-        y = format(str(y))
-        return render_template("index.html", price=y)
+        y = float(y)
+        y = round(y,2)
+        return render_template("prediction.html", price=y)
     else:
         return render_template("index.html")
 
