@@ -8,11 +8,20 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
+    """
+    This renders the home page of our application where user has to fill the form
+    to predict the selling price.
+    """
     return render_template("index.html")
 
 
 @app.route("/predict",methods=["POST", "GET"])
 def predict():
+    """
+    This function redirect the user to home page if user has not send the form data
+    else it extract the data from form field and run the machine learning algorithm
+    to predict the selling price of the car.
+    """
     if request.method == "POST":
         model = load("model.pkl")
         year = int(request.form["year"])
